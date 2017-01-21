@@ -25,9 +25,6 @@ public class Player : MonoBehaviour
     var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     
     Vector2 velocity = input * Speed;
-
-    var eulerAngles = transform.rotation.eulerAngles;
-    eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
     
     if (Input.GetKey("space"))
     {
@@ -36,18 +33,25 @@ public class Player : MonoBehaviour
 
     Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
 
-    Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
+    
+    var eulerAngles = transform.rotation.eulerAngles;
+    eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
     
     if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
     {
+//      eulerAngles.y += Input.GetAxis("Vertical") * RotationSpeed * Time.deltaTime;
+      
       Animator.SetFloat("Horizontal", velocity.x);
       Animator.SetFloat("Vertical", 0);
     }
     else
     {
+      
       Animator.SetFloat ("Vertical", velocity.y);
       Animator.SetFloat("Horizontal", 0);
-    }      
+    }
+    
+    Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
   }
 
   private void AdjustRotation ()
