@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
   public float Speed = 70f;
   public float Threshold = 5f;
 
-  private Vector3 velocity;
+  private Vector2 velocity;
 
   void OnEnable ()
   {
@@ -21,7 +21,18 @@ public class Player : MonoBehaviour
 
   void Update ()
   {
-    transform.localPosition += velocity * Time.deltaTime;
+    Move ();
+    AdjustRotation ();
+  }
+
+  private void Move ()
+  {
+    transform.localPosition += (transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime;
+  }
+
+  private void AdjustRotation ()
+  {
+    transform.eulerAngles = new Vector3 (0f, Mathf.Sin (transform.position.y * 0.05f) * Mathf.Rad2Deg + Mathf.Cos (transform.position.x * 0.05f) * Mathf.Rad2Deg, 0f);
   }
 
 
@@ -35,13 +46,13 @@ public class Player : MonoBehaviour
   {
     Vector2 delta = eventData.position - eventData.pressPosition;
 
-    if (Mathf.Abs(delta.y) > Threshold || Mathf.Abs(delta.x) > Threshold)
+    if (Mathf.Abs (delta.y) > Threshold || Mathf.Abs (delta.x) > Threshold)
     {
-      velocity = (Mathf.Abs (delta.y) > Mathf.Abs (delta.x) ? transform.forward * Mathf.Sign(delta.y)  : transform.right * Mathf.Sign (delta.x)) * Speed;
+      velocity = (Mathf.Abs (delta.y) > Mathf.Abs (delta.x) ? new Vector2 (0f, Mathf.Sign (delta.y)) : new Vector2 (Mathf.Sign (delta.x), 0f)) * Speed;
     }
     else
     {
-      velocity = Vector3.zero;
+      velocity = Vector2.zero;
     }
 
   }
