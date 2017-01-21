@@ -5,11 +5,16 @@ using UnityEngine;
 public class kbmove : MonoBehaviour {
 
 	public float speed = 0.4f;
+	public float health = 100.0f;
 
 	private Rigidbody _body;
 
 	void Start() {
 		_body = GetComponent<Rigidbody> ();
+	}
+
+	void ApplyDamage(float damage) {
+		health -= damage;
 	}
 
 	void FixedUpdate () {

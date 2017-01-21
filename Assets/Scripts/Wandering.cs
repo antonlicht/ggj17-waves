@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wandering : MonoBehaviour {
 
-	public Collider collider;
+	public Collider bounds;
 	public float wanderSpeed;
 	public float maxWanderDist;
 	private Vector3 _wanderTarget;
@@ -22,7 +22,7 @@ public class Wandering : MonoBehaviour {
 	void FixedUpdate () {
 		Vector3 selfPos = _body.transform.position;
 		_wanderTarget.y = selfPos.y;
-		if (Vector3.Distance(_wanderTarget, collider.ClosestPointOnBounds(_wanderTarget)) <= 0.01f) {
+		if (Vector3.Distance(_wanderTarget, bounds.ClosestPointOnBounds(_wanderTarget)) <= 0.01f) {
 			float r1 = Random.Range (-maxWanderDist, maxWanderDist);
 			float r2 = Random.Range (-maxWanderDist, maxWanderDist);
 			Vector3 randomDir = new Vector3(r1, 0.0f, r2).normalized;
