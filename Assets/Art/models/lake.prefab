@@ -111,6 +111,7 @@ GameObject:
   - 4: {fileID: 478942}
   - 33: {fileID: 3311350}
   - 23: {fileID: 2376060}
+  - 64: {fileID: 6463114}
   m_Layer: 0
   m_Name: bush.001
   m_TagString: Untagged
@@ -146,6 +147,7 @@ GameObject:
   - 4: {fileID: 451178}
   - 33: {fileID: 3302354}
   - 23: {fileID: 2333454}
+  - 64: {fileID: 6415674}
   m_Layer: 0
   m_Name: red tree
   m_TagString: Untagged
@@ -163,6 +165,7 @@ GameObject:
   - 4: {fileID: 477880}
   - 33: {fileID: 3376862}
   - 23: {fileID: 2342594}
+  - 64: {fileID: 6462180}
   m_Layer: 0
   m_Name: bench
   m_TagString: Untagged
@@ -180,6 +183,7 @@ GameObject:
   - 4: {fileID: 461208}
   - 33: {fileID: 3308404}
   - 23: {fileID: 2313004}
+  - 64: {fileID: 6439742}
   m_Layer: 0
   m_Name: bush
   m_TagString: Untagged
@@ -197,6 +201,7 @@ GameObject:
   - 4: {fileID: 443380}
   - 33: {fileID: 3377450}
   - 23: {fileID: 2399176}
+  - 64: {fileID: 6486312}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -231,6 +236,7 @@ GameObject:
   - 4: {fileID: 471122}
   - 33: {fileID: 3336344}
   - 23: {fileID: 2340708}
+  - 64: {fileID: 6444900}
   m_Layer: 0
   m_Name: bush.002
   m_TagString: Untagged
@@ -248,6 +254,7 @@ GameObject:
   - 4: {fileID: 447246}
   - 33: {fileID: 3380232}
   - 23: {fileID: 2303406}
+  - 64: {fileID: 6499238}
   m_Layer: 0
   m_Name: minitrees.003
   m_TagString: Untagged
@@ -282,6 +289,7 @@ GameObject:
   - 4: {fileID: 450894}
   - 33: {fileID: 3305230}
   - 23: {fileID: 2312888}
+  - 64: {fileID: 6413834}
   m_Layer: 0
   m_Name: minitrees.001
   m_TagString: Untagged
@@ -299,6 +307,7 @@ GameObject:
   - 4: {fileID: 436812}
   - 33: {fileID: 3359664}
   - 23: {fileID: 2376038}
+  - 64: {fileID: 6411542}
   m_Layer: 0
   m_Name: minitrees.002
   m_TagString: Untagged
@@ -326,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108586}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.4650586, y: 0.052978516, z: -4.24}
+  m_LocalPosition: {x: 84.9, y: 8, z: -105.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
@@ -470,7 +479,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.020944357, y: 3375.934, z: 0}
+  m_LocalPosition: {x: 1386.16, y: 4535.5244, z: -849.1683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -537,7 +546,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133434}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.4650586, y: 0.052978516, z: -2.73}
+  m_LocalPosition: {x: 1.4650586, y: 9, z: -2.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
@@ -991,6 +1000,114 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176238}
+  m_Mesh: {fileID: 4300000, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6411542
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300002, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6413834
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300016, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6415674
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300026, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6439742
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300018, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6444900
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300022, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6462180
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300014, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6463114
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300024, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6486312
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300020, guid: 2369274c13555f64084676d35e23daf8, type: 3}
+--- !u!64 &6499238
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 2369274c13555f64084676d35e23daf8, type: 3}
 --- !u!114 &11404714
 MonoBehaviour:
@@ -3992,7 +4109,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 0.75
+      scalar: 75
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5381,7 +5498,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 0.5
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
