@@ -5,23 +5,44 @@ public class Player : MonoBehaviour
   public Rigidbody Rigidbody;
   public Animator Animator;
 
-  public float Speed = 70f;
-  public float Threshold = 5f;
+  public float Speed = 100f;  
+
+  public float boostTimeInSecond;
+  
+  public float boostMultiplier = 5f;
+
+  private Vector3 rotation;
 
   void Update ()
   {
     Move ();
     AdjustRotation ();
   }
-
+  
   private void Move ()
   {
-    Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * Speed;
+    var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    
+    Vector2 velocity = input * Speed;
 
-    Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
+    if (Input.GetKey("space"))
+    {
+      velocity *= boostMultiplier;
+    }
 
-    Animator.SetFloat ("Horizontal", velocity.x);
-    Animator.SetFloat ("Vertical", velocity.y);
+    Rigidbody.MoveRotation(Quaternion.Euler(rotation));
+    Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));    
+    
+    if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
+    {
+      Animator.SetFloat("Horizontal", velocity.x);
+      Animator.SetFloat("Vertical", 0);
+    }
+    else
+    {
+      Animator.SetFloat ("Vertical", velocity.y);
+      Animator.SetFloat("Horizontal", 0);
+    }      
   }
 
   private void AdjustRotation ()
@@ -29,6 +50,6 @@ public class Player : MonoBehaviour
     float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
     float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
     float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.05f;
-    transform.eulerAngles = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
+    rotation = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
   }
 }

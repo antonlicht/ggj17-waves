@@ -7,18 +7,15 @@ using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
 {
-  public Camera camera;
   public Transform player;
   public Transform home;
 
-  Image[] images; // 0 is top, clockwise till  3 left
+  public Image[] images; // 0 is top, clockwise till  3 left
 
   private float t;
 
   void Start()
   {
-    images = GetComponentsInChildren<Image>(includeInactive: true);
-    
     foreach (var image in images)
     {
       image.gameObject.SetActive(true);
@@ -39,6 +36,7 @@ public class TargetIndicator : MonoBehaviour
   private void FlashIndicator()
   {
     var angle = GetAngle();
+    
     Image image = null;
     if (angle > -45 && angle < 45)
     {
@@ -64,29 +62,33 @@ public class TargetIndicator : MonoBehaviour
   
   float GetAngle()
   {
-    float angle;
     float xDiff = home.position.x - player.position.x;
     float zDiff = home.position.z - player.position.z;
    
-    angle = Mathf.Atan(xDiff / zDiff) * 180 / Mathf.PI;
-
+    var angle = Mathf.Atan(xDiff / zDiff) * 180 / Mathf.PI;
+    
     // tangent only returns an angle from -90 to +90.  we need to check if its behind us and adjust.
     if (zDiff < 0)
     {
-      angle += zDiff >= 0 ? 180f : -180f;
+      if (xDiff >= 0)
+        angle += 180f;
+      else
+        angle -= 180f;
     }
- 
-    // this is our angle of rotation from 0->360
+     
     float playerAngle = player.eulerAngles.y;
-    if (playerAngle > 180f) playerAngle = 360f - playerAngle;
- 
-    
     angle -= playerAngle;
- 
-    // Make sure we didn't rotate past 180 in either direction
-    if (angle < -180f) angle += 360;
-    else if (angle > 180f) angle -= 360;
- 
+    
+    while (angle > 180f)
+    {
+      angle = 360f - angle;
+    }
+
+    while (angle < -180f)
+    {
+      angle = angle + 360f;
+    }
+    
     return angle;
   }
 }
