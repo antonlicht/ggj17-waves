@@ -295,10 +295,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 20.4
+  m_Radius: 22.77
   m_Height: 104.52
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -9.58}
 --- !u!212 &212000012559126550
 SpriteRenderer:
   m_ObjectHideFlags: 1
