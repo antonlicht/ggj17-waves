@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	public Collider areaOfEffect;
 	public Collider areaOfDamage;
-	public GameObject wanderDebug;
+
 	public string targetTag;
 	public float chaseSpeed;
 	public float wanderSpeed;
@@ -79,10 +79,6 @@ public class EnemyController : MonoBehaviour {
 					_wanderTarget = hit.point;
 				} else {
 					_wanderTarget = selfPos + maxWanderDist * randomDir;
-				}
-
-				if (wanderDebug) {
-					wanderDebug.transform.position = _wanderTarget;
 				}
 			}				
 
