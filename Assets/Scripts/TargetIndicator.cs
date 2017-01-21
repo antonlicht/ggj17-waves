@@ -29,7 +29,7 @@ public class TargetIndicator : MonoBehaviour
   void Update()
   {
     t += Time.deltaTime;
-    if (t > 2)
+    if (t > 4  )
     {
       t = 0;
       FlashIndicator();
