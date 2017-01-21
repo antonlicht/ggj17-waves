@@ -28,3 +28,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+.idea/.idea.ggj17-waves/.idea/contentModel.xml
+.idea/.idea.ggj17-waves/.idea/modules.xml
+.idea/.idea.ggj17-waves/.idea/vcs.xml
+.idea/.idea.ggj17-waves/.idea/workspace.xml
+.idea/.idea.ggj17-waves/riderModule.iml
