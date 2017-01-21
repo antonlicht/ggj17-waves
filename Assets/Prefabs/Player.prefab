@@ -78,22 +78,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000013075176386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010823737932}
-  - 212: {fileID: 212000012559126550}
-  m_Layer: 0
-  m_Name: New Sprite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000013623992934
 GameObject:
   m_ObjectHideFlags: 1
@@ -137,7 +121,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011516392828}
-  - {fileID: 4000010823737932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000010801146802
@@ -152,19 +135,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000011516392828}
-  m_RootOrder: 1
---- !u!4 &4000010823737932
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013075176386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000010297045774}
   m_RootOrder: 1
 --- !u!4 &4000011121644572
 Transform:
@@ -294,9 +264,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Color: {r: 1, g: 1, b: 0.5808823, a: 1}
+  m_Intensity: 0.5
+  m_Range: 5000
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -316,7 +286,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &114000014268627690
@@ -333,7 +303,9 @@ MonoBehaviour:
   Rigidbody: {fileID: 54000010882476358}
   Animator: {fileID: 95000011256914484}
   Speed: 70
-  Threshold: 5
+  RotationSpeed: 10
+  boostTimeInSecond: 0
+  boostMultiplier: 5
 --- !u!136 &136000011291034698
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -347,39 +319,6 @@ CapsuleCollider:
   m_Height: 104.52
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -9.58}
---- !u!212 &212000012559126550
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013075176386}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!212 &212000012862731084
 SpriteRenderer:
   m_ObjectHideFlags: 1
