@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: b1f4079d4b6bbea49935d63220ffa0a6
+timeCreated: 1485030242
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: park_light
+    100002: park_light.001
+    100004: picnic table
+    100006: picnic table.001
+    100008: picnic table.002
+    100010: //RootNode
+    100012: plant
+    100014: plant.001
+    100016: plant.002
+    100018: tree
+    100020: tree.001
+    100022: yellow_car
+    100024: yellow_car.005
+    400000: park_light
+    400002: park_light.001
+    400004: picnic table
+    400006: picnic table.001
+    400008: picnic table.002
+    400010: //RootNode
+    400012: plant
+    400014: plant.001
+    400016: plant.002
+    400018: tree
+    400020: tree.001
+    400022: yellow_car
+    400024: yellow_car.005
+    2300000: park_light
+    2300002: park_light.001
+    2300004: picnic table
+    2300006: picnic table.001
+    2300008: picnic table.002
+    2300010: plant
+    2300012: plant.001
+    2300014: plant.002
+    2300016: tree
+    2300018: tree.001
+    2300020: yellow_car
+    2300022: yellow_car.005
+    3300000: park_light
+    3300002: park_light.001
+    3300004: picnic table
+    3300006: picnic table.001
+    3300008: picnic table.002
+    3300010: plant
+    3300012: plant.001
+    3300014: plant.002
+    3300016: tree
+    3300018: tree.001
+    3300020: yellow_car
+    3300022: yellow_car.005
+    4300000: yellow_car
+    4300002: park_light
+    4300004: plant
+    4300006: plant.001
+    4300008: plant.002
+    4300010: tree
+    4300012: tree.001
+    4300014: park_light.001
+    4300016: yellow_car.005
+    4300018: picnic table
+    4300020: picnic table.001
+    4300022: picnic table.002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
