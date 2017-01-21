@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour {
 
 	public Wandering wandering;
 
+	public Animator headAnimator;
+	public Animator walkAnimator;
+
 	public string targetTag;
 	public float chaseSpeed;
 	public float damage;
@@ -42,15 +45,16 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (_chaseTarget == other.gameObject) {
+		if (_chaseTarget == other.gameObject)
 			_chaseTarget = null;
-		}
+
+		if (headAnimator) 
+			headAnimator.Play ("EnemyHead_scan");
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		if (collision.collider.gameObject == _chaseTarget) {
+		if (collision.collider.gameObject == _chaseTarget)
 			_captured = true;
-		}
 	}
 
 	void OnCollisionStay(Collision collision) {
@@ -58,9 +62,8 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision collision) {
-		if (collision.collider.gameObject == _chaseTarget) {
+		if (collision.collider.gameObject == _chaseTarget)
 			_captured = false;
-		}
 	}
 
 	bool CanChase(GameObject target) {
@@ -69,9 +72,8 @@ public class EnemyController : MonoBehaviour {
 		RaycastHit hit;
 
 		bool wasHit = Physics.Raycast (selfPos, dir, out hit);
-		if (wasHit && hit.collider.gameObject == target) {
+		if (wasHit && hit.collider.gameObject == target)
 			return true;
-		}				
 
 		return false;
 	}
@@ -79,9 +81,9 @@ public class EnemyController : MonoBehaviour {
 	void FixedUpdate () {
 		Vector3 selfPos = _body.transform.position;
 
-		if (_captured) {
+		if (_captured) {			
 		//	_chaseTarget.SendMessage ("ApplyDamage", damage * Time.deltaTime);
-		}
+		}			
 
 		if (_chaseTarget && CanChase(_chaseTarget)) {
 			wandering.enabled = false;
@@ -92,6 +94,18 @@ public class EnemyController : MonoBehaviour {
 		else {
 			_chaseTarget = null;
 			wandering.enabled = true;
+		}
+			
+		float animationSpeedCoeff = 1.0f;
+		if (wandering.enabled)
+			animationSpeedCoeff = 0.5f;
+		
+		if (walkAnimator)
+			walkAnimator.SetFloat ("speed", animationSpeedCoeff);
+
+		if (headAnimator) {
+			headAnimator.SetBool ("drool", !(wandering.enabled || _captured));
+			headAnimator.SetBool ("attack", _captured);
 		}
 			
 	}
