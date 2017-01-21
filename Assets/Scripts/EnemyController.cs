@@ -7,18 +7,16 @@ public class EnemyController : MonoBehaviour {
 	public Collider areaOfEffect;
 	public Collider areaOfDamage;
 
+	public Wandering wandering;
+
 	public string targetTag;
 	public float chaseSpeed;
-	public float wanderSpeed;
-	public float maxWanderDist;
 
 	private GameObject _chaseTarget = null;
-	private Vector3 _wanderTarget;
 	private Rigidbody _body = null;
 
 	void Start () {
 		_chaseTarget = null;
-		_wanderTarget = this.transform.position;
 		_body = GetComponent<Rigidbody>();
 		areaOfEffect.isTrigger = true;
 		areaOfDamage.isTrigger = false;
@@ -33,6 +31,7 @@ public class EnemyController : MonoBehaviour {
 			return;
 
 		_chaseTarget = other.gameObject;
+		wandering.enabled = false;
 	}
 
 	void OnTriggerStay(Collider other) {
@@ -46,7 +45,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	bool CanChase(GameObject target) {
-		Vector3 selfPos = this.transform.position;
+		Vector3 selfPos = _body.transform.position;
 		Vector3 dir = target.transform.position - selfPos;
 		RaycastHit hit;
 
@@ -59,30 +58,17 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		Vector3 selfPos = this.transform.position;
+		Vector3 selfPos = _body.transform.position;
 
 		if (_chaseTarget && CanChase(_chaseTarget)) {
-			_wanderTarget = selfPos; // reset the wander target
+			wandering.enabled = false;
 
 			Vector3 targetPos = _chaseTarget.transform.position;
 			_body.MovePosition (Vector3.MoveTowards (selfPos, targetPos, chaseSpeed * Time.deltaTime));
 		} 
 		else {
 			_chaseTarget = null;
-			_wanderTarget.y = selfPos.y;
-			if (Vector3.Distance(_wanderTarget, areaOfDamage.ClosestPointOnBounds(_wanderTarget)) <= 0.01f) {
-				float r1 = Random.Range (-maxWanderDist, maxWanderDist);
-				float r2 = Random.Range (-maxWanderDist, maxWanderDist);
-				Vector3 randomDir = new Vector3(r1, 0.0f, r2).normalized;
-				RaycastHit hit;
-				if (Physics.Raycast (selfPos, randomDir, out hit, maxWanderDist)) {
-					_wanderTarget = hit.point;
-				} else {
-					_wanderTarget = selfPos + maxWanderDist * randomDir;
-				}
-			}				
-
-			_body.MovePosition (Vector3.MoveTowards (selfPos, _wanderTarget, wanderSpeed * Time.deltaTime));
+			wandering.enabled = true;
 		}
 			
 	}
