@@ -11,23 +11,158 @@ ModelImporter:
     100006: //RootNode
     100008: park_tile_01
     100010: plant
+    100012: bush
+    100014: bush.001
+    100016: bush.002
+    100018: Cylinder.001
+    100020: Grid
+    100022: minitrees
+    100024: minitrees.001
+    100026: park_light
+    100028: park_light.001
+    100030: picnic table
+    100032: picnic table.001
+    100034: picnic table.002
+    100036: plant.001
+    100038: plant.002
+    100040: red tree
+    100042: rock
+    100044: rock.001
+    100046: rock.002
+    100048: tile
+    100050: tree
+    100052: tree.001
+    100054: tree.002
+    100056: tree.003
+    100058: tree.004
+    100060: yellow_car
+    100062: yellow_car.001
+    100064: yellow_car.005
     400000: Camera
     400002: Cube
     400004: Lamp
     400006: //RootNode
     400008: park_tile_01
     400010: plant
+    400012: bush
+    400014: bush.001
+    400016: bush.002
+    400018: Cylinder.001
+    400020: Grid
+    400022: minitrees
+    400024: minitrees.001
+    400026: park_light
+    400028: park_light.001
+    400030: picnic table
+    400032: picnic table.001
+    400034: picnic table.002
+    400036: plant.001
+    400038: plant.002
+    400040: red tree
+    400042: rock
+    400044: rock.001
+    400046: rock.002
+    400048: tile
+    400050: tree
+    400052: tree.001
+    400054: tree.002
+    400056: tree.003
+    400058: tree.004
+    400060: yellow_car
+    400062: yellow_car.001
+    400064: yellow_car.005
     2300000: Cube
     2300002: park_tile_01
     2300004: plant
     2300006: //RootNode
+    2300008: bush
+    2300010: bush.001
+    2300012: bush.002
+    2300014: Cylinder.001
+    2300016: Grid
+    2300018: minitrees
+    2300020: minitrees.001
+    2300022: park_light
+    2300024: park_light.001
+    2300026: picnic table
+    2300028: picnic table.001
+    2300030: picnic table.002
+    2300032: plant.001
+    2300034: plant.002
+    2300036: red tree
+    2300038: rock
+    2300040: rock.001
+    2300042: rock.002
+    2300044: tile
+    2300046: tree
+    2300048: tree.001
+    2300050: tree.002
+    2300052: tree.003
+    2300054: tree.004
+    2300056: yellow_car
+    2300058: yellow_car.001
+    2300060: yellow_car.005
     3300000: Cube
     3300002: park_tile_01
     3300004: plant
     3300006: //RootNode
+    3300008: bush
+    3300010: bush.001
+    3300012: bush.002
+    3300014: Cylinder.001
+    3300016: Grid
+    3300018: minitrees
+    3300020: minitrees.001
+    3300022: park_light
+    3300024: park_light.001
+    3300026: picnic table
+    3300028: picnic table.001
+    3300030: picnic table.002
+    3300032: plant.001
+    3300034: plant.002
+    3300036: red tree
+    3300038: rock
+    3300040: rock.001
+    3300042: rock.002
+    3300044: tile
+    3300046: tree
+    3300048: tree.001
+    3300050: tree.002
+    3300052: tree.003
+    3300054: tree.004
+    3300056: yellow_car
+    3300058: yellow_car.001
+    3300060: yellow_car.005
     4300000: Cube
     4300002: park_tile_01
     4300004: plant
+    4300006: yellow_car
+    4300008: park_light
+    4300010: plant.001
+    4300012: plant.002
+    4300014: tree
+    4300016: tree.001
+    4300018: park_light.001
+    4300020: yellow_car.005
+    4300022: picnic table
+    4300024: picnic table.001
+    4300026: picnic table.002
+    4300028: yellow_car.001
+    4300030: minitrees.001
+    4300032: tree.003
+    4300034: Cylinder.001
+    4300036: tree.004
+    4300038: rock
+    4300040: rock.001
+    4300042: rock.002
+    4300044: bush
+    4300046: Grid
+    4300048: bush.002
+    4300050: bush.001
+    4300052: tile
+    4300054: red tree
+    4300056: minitrees
+    4300058: tree.002
   materials:
     importMaterials: 1
     materialName: 0
@@ -35,7 +170,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
