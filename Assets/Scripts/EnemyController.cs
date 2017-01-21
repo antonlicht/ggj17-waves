@@ -41,7 +41,16 @@ public class EnemyController : MonoBehaviour {
 	void FixedUpdate () {
 		if (_chaseTarget) {			
 			Vector3 targetPos = _chaseTarget.transform.position;
-			Vector3 selfPos = this.transform.position;			
+			Vector3 selfPos = this.transform.position;
+			Vector3 dir = targetPos - selfPos;
+			RaycastHit hit;
+
+			bool wasHit = Physics.Raycast (selfPos, dir.normalized, out hit);
+			if (wasHit && hit.collider.gameObject != _chaseTarget) {
+				_chaseTarget = null;
+				return;
+			}
+
 			_body.MovePosition (Vector3.MoveTowards (selfPos, targetPos, speed * Time.deltaTime));
 		}
 	}
