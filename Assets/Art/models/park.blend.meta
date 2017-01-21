@@ -1,33 +1,17 @@
 fileFormatVersion: 2
-guid: 4a90833c7b5259f48bcb1e1cc6f88675
-timeCreated: 1485011597
+guid: 9f81fd8eb66dabc43bdae6317339d3b5
+timeCreated: 1485008822
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cube
-    100004: Lamp
-    100006: //RootNode
-    100008: park_tile_01
-    100010: plant
-    400000: Camera
-    400002: Cube
-    400004: Lamp
-    400006: //RootNode
-    400008: park_tile_01
-    400010: plant
-    2300000: Cube
-    2300002: park_tile_01
-    2300004: plant
-    2300006: //RootNode
-    3300000: Cube
-    3300002: park_tile_01
-    3300004: plant
-    3300006: //RootNode
-    4300000: Cube
-    4300002: park_tile_01
-    4300004: plant
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: park_tile_01
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
