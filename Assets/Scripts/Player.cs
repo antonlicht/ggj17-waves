@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
 
   private void AdjustRotation ()
   {
-    transform.eulerAngles = new Vector3 (0f, Mathf.Sin (transform.position.y * 0.05f) * Mathf.Rad2Deg + Mathf.Cos (transform.position.x * 0.05f) * Mathf.Rad2Deg, 0f);
+    float sinRot = Mathf.Sin(transform.position.z*0.005f)*Mathf.Rad2Deg;
+    float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
+    float linRot = (transform.position.x + transform.position.z)*0.05f;
+    transform.eulerAngles = new Vector3 (0f, sinRot + cosRot + linRot , 0f);
   }
 
 
