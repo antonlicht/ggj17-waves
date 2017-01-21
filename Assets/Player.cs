@@ -4,9 +4,8 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
   public PointerListener TouchInput;
-  public float MinSpeed = 10f;
-  public float SpeedThreshold = 2f;
-  public float MaxSpeed = 30f;
+  public float Speed = 70f;
+  public float Threshold = 5f;
 
   private Vector3 velocity;
 
@@ -35,21 +34,16 @@ public class Player : MonoBehaviour
   public void HandleDrag (PointerEventData eventData)
   {
     Vector2 delta = eventData.position - eventData.pressPosition;
-    Vector3 newVelocity = (Mathf.Abs(delta.y) > Mathf.Abs(delta.x) ? transform.up * delta.y : transform.right * delta.x);
 
-    if ((newVelocity.magnitude < MinSpeed - SpeedThreshold && velocity.magnitude > 0) || (newVelocity.magnitude < MinSpeed + SpeedThreshold && velocity.magnitude == 0))
+    if (Mathf.Abs(delta.y) > Threshold || Mathf.Abs(delta.x) > Threshold)
     {
-      velocity = Vector3.zero;
+      velocity = (Mathf.Abs (delta.y) > Mathf.Abs (delta.x) ? transform.forward * Mathf.Sign(delta.y)  : transform.right * Mathf.Sign (delta.x)) * Speed;
     }
     else
     {
-      if (newVelocity.magnitude > MaxSpeed)
-      {
-        newVelocity = newVelocity.normalized * MaxSpeed;
-      }
-
-      velocity = newVelocity;
+      velocity = Vector3.zero;
     }
+
   }
 
   private void HandleEndDrag (PointerEventData eventData)
