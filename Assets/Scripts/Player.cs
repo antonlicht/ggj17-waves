@@ -5,7 +5,8 @@ public class Player : MonoBehaviour
   public Rigidbody Rigidbody;
   public Animator Animator;
 
-  public float Speed = 100f;  
+  public float Speed = 100f;
+  public float RotationSpeed = 10f;
 
   public float boostTimeInSecond;
   
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
   void Update ()
   {
     Move ();
-    AdjustRotation ();
+//    AdjustRotation ();
   }
   
   private void Move ()
@@ -25,13 +26,17 @@ public class Player : MonoBehaviour
     
     Vector2 velocity = input * Speed;
 
+    var eulerAngles = transform.rotation.eulerAngles;
+    eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
+    
     if (Input.GetKey("space"))
     {
       velocity *= boostMultiplier;
     }
 
-    Rigidbody.MoveRotation(Quaternion.Euler(rotation));
-    Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));    
+    Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
+
+    Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
     
     if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
     {
