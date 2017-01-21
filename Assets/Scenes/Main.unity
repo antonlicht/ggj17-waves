@@ -152,12 +152,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &189989019 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000012675742288, guid: b1d19477f1c5979498510d5d821d024e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300229928}
-  m_Script: {fileID: 11500000, guid: df14e1e7fc2e13a41b0e9dd113356b8c, type: 3}
 --- !u!1001 &642414346
 Prefab:
   m_ObjectHideFlags: 0
@@ -201,7 +195,7 @@ Prefab:
         type: 2}
       propertyPath: TouchInput
       value: 
-      objectReference: {fileID: 189989019}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7113e2b12534634aa6dfe38702d5dfc, type: 2}
   m_IsPrefabParent: 0
@@ -370,7 +364,8 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000012675742288, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1626884121
