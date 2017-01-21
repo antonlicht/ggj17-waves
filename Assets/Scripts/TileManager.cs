@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class TileManager : MonoBehaviour
 {
@@ -15,65 +16,66 @@ public class TileManager : MonoBehaviour
   private Grid<GameObject> _grid;
   private int _currentX;
   private int _currentY;
-  private Dictionary<int, List<GameObject>> _pool = new Dictionary<int, List<GameObject>> ();
-  private Dictionary<GameObject, int> _activeObjects = new Dictionary<GameObject, int> ();
+  private Dictionary<int, List<GameObject>> _pool = new Dictionary<int, List<GameObject>>();
+  private Dictionary<GameObject, int> _activeObjects = new Dictionary<GameObject, int>();
 
-  void Awake ()
+  void Awake()
   {
-    _seed = new Random ().Next (int.MinValue, int.MaxValue);
-    _grid = new Grid<GameObject> (GridSize, GridSize);
-    SetGridPosition (0, 0, true);
+    _seed = Random.Range(1, int.MaxValue);
+    _grid = new Grid<GameObject>(GridSize, GridSize);
+    SetGridPosition(0, 0, true);
   }
 
-  void Update ()
+  void Update()
   {
     Vector3 targetPos = TargetObject.position;
-    SetGridPosition (Mathf.FloorToInt ((-targetPos.x / worldToGridScale) + GridSize / 2f), Mathf.FloorToInt ((-targetPos.z / worldToGridScale) + GridSize / 2f));
+    SetGridPosition(Mathf.FloorToInt((-targetPos.x / worldToGridScale) + GridSize / 2f),
+      Mathf.FloorToInt((-targetPos.z / worldToGridScale) + GridSize / 2f));
   }
 
-  private GameObject GetInstanceForGridPosition (int x, int y)
+  private GameObject GetInstanceForGridPosition(int x, int y)
   {
-    int index = (x * _seed + y * _seed * _seed) % TilePrefabs.Length;
+    var computed = Math.Abs(x * _seed + y * _seed * _seed);
+    int index = computed % TilePrefabs.Length;
 
     GameObject instance = null;
-    if (_pool.ContainsKey (index) && _pool[index].Any ())
+    if (_pool.ContainsKey(index) && _pool[index].Any())
     {
       instance = _pool[index][0];
-      _pool.Remove (0);
-
+      _pool[index].RemoveAt(0);
     }
     else
     {
-      instance = Instantiate (TilePrefabs[index]);
-      instance.transform.SetParent (transform);
+      instance = Instantiate(TilePrefabs[index]);
+      instance.transform.SetParent(transform);
     }
 
-    instance.SetActive (true);
-    instance.transform.position = new Vector3 (x * worldToGridScale, 0f, y * worldToGridScale);
-    _activeObjects.Add (instance, index);
+    instance.SetActive(true);
+    instance.transform.position = new Vector3(x * worldToGridScale, 0f, y * worldToGridScale);
+    _activeObjects.Add(instance, index);
     return instance;
   }
 
-  private void Release (GameObject instance)
+  private void Release(GameObject instance)
   {
     if (instance == null)
     {
       return;
     }
 
-    instance.SetActive (false);
+    instance.SetActive(false);
 
     int index = _activeObjects[instance];
-    _activeObjects.Remove (instance);
+    _activeObjects.Remove(instance);
 
-    if (!_pool.ContainsKey (index))
+    if (!_pool.ContainsKey(index))
     {
-      _pool.Add (index, new List<GameObject> ());
+      _pool.Add(index, new List<GameObject>());
     }
-    _pool[index].Add (instance);
+    _pool[index].Add(instance);
   }
 
-  private void SetGridPosition (int x, int y, bool force = false)
+  private void SetGridPosition(int x, int y, bool force = false)
   {
     if (!force)
     {
@@ -88,8 +90,8 @@ public class TileManager : MonoBehaviour
     _currentX = x;
     _currentY = y;
 
-    Grid<GameObject> contentGrid = Grid<GameObject>.CreateEmpty (_grid);
-    contentGrid.SetIDOffset (_grid.IDOffsetX, _grid.IDOffsetY);
+    Grid<GameObject> contentGrid = Grid<GameObject>.CreateEmpty(_grid);
+    contentGrid.SetIDOffset(_grid.IDOffsetX, _grid.IDOffsetY);
 
     for (int i = contentGrid.IDOffsetY; i < contentGrid.IDOffsetY + contentGrid.Height; i++)
     {
@@ -99,7 +101,7 @@ public class TileManager : MonoBehaviour
       }
     }
 
-    _grid.Shift (-deltaX, -deltaY);
+    _grid.Shift(-deltaX, -deltaY);
 
     for (int i = contentGrid.IDOffsetY; i < contentGrid.IDOffsetY + contentGrid.Height; i++)
     {
@@ -108,7 +110,7 @@ public class TileManager : MonoBehaviour
         _grid[j, i] = contentGrid[j, i];
         if (_grid[j, i] == null && contentGrid[j, i] != null)
         {
-          Release (contentGrid[j, i]);
+          Release(contentGrid[j, i]);
         }
       }
     }
@@ -119,7 +121,7 @@ public class TileManager : MonoBehaviour
       {
         if (_grid[j, i] == null)
         {
-          _grid[j, i] = GetInstanceForGridPosition (j, i);
+          _grid[j, i] = GetInstanceForGridPosition(j, i);
         }
         _grid[j, i].name = "cell_" + j + "_" + i;
       }

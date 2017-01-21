@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469236, g: 0.49678588, b: 0.5750852, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692397, g: 0.49678612, b: 0.57508594, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -398,6 +398,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilePrefabs:
   - {fileID: 100006, guid: 4a90833c7b5259f48bcb1e1cc6f88675, type: 3}
+  - {fileID: 100016, guid: 474f487d02134444b854c761720da1b5, type: 3}
+  - {fileID: 100016, guid: 474f487d02134444b854c761720da1b5, type: 3}
+  - {fileID: 100006, guid: 4a90833c7b5259f48bcb1e1cc6f88675, type: 3}
+  - {fileID: 100016, guid: 474f487d02134444b854c761720da1b5, type: 3}
+  - {fileID: 100006, guid: 4a90833c7b5259f48bcb1e1cc6f88675, type: 3}
+  - {fileID: 100016, guid: 474f487d02134444b854c761720da1b5, type: 3}
   TargetObject: {fileID: 1260377732}
   worldToGridScale: 2006
   GridSize: 3

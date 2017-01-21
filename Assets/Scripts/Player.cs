@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
   {
     float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
     float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
-    float linRot = (transform.position.x + transform.position.z + Time.time) * 0.05f;
+    float linRot = (transform.position.x + transform.position.z + Time.time * 100) * 0.05f;
     transform.eulerAngles = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
   }
 }
