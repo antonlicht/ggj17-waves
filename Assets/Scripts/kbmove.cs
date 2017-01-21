@@ -6,12 +6,18 @@ public class kbmove : MonoBehaviour {
 
 	public float speed = 0.4f;
 
+	private Rigidbody _body;
+
+	void Start() {
+		_body = GetComponent<Rigidbody> ();
+	}
+
 	void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0.0f);
+		Vector3 dir = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
-		this.transform.position += speed * Time.deltaTime * movement;
+		_body.MovePosition(this.transform.position + speed * Time.deltaTime * dir);
 	}
 }

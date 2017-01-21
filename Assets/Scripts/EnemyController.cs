@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	public Collider2D areaOfEffect;
-	public Collider2D areaOfDamage;
+	public Collider areaOfEffect;
+	public Collider areaOfDamage;
 	public string targetTag;
 	public float speed;
 
 	private GameObject _chaseTarget = null;
-	private Rigidbody2D _body = null;
+	private Rigidbody _body = null;
 
 	void Start () {
 		_chaseTarget = null;
-		_body = GetComponent<Rigidbody2D>();
+		_body = GetComponent<Rigidbody>();
 		areaOfEffect.isTrigger = true;
 		areaOfDamage.isTrigger = false;
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter(Collider other) {
 		if (_chaseTarget)
 			return;
 		if (!other.CompareTag(targetTag))
@@ -28,11 +28,11 @@ public class EnemyController : MonoBehaviour {
 		_chaseTarget = other.gameObject;
 	}
 
-	void OnTriggerStay2D(Collider2D other) {
-		OnTriggerEnter2D (other);
+	void OnTriggerStay(Collider other) {
+		OnTriggerEnter (other);
 	}
 
-	void OnTriggerExit2D(Collider2D other) {
+	void OnTriggerExit(Collider other) {
 		if (_chaseTarget == other.gameObject) {
 			_chaseTarget = null;
 		}
