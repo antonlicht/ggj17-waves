@@ -22,7 +22,7 @@ public class Billboard : MonoBehaviour {
 		Vector3 dir = (curPos - _oldPos).normalized;
 
 		if (flipSprite) {
-			flipSprite.flipX = dir.x > 0;
+			flipSprite.flipX = dir.x < 0;
 		}
 
 		_oldPos = curPos;

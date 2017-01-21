@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6001f8338d0f1f742aa21810fe84d82c
-timeCreated: 1485022708
+timeCreated: 1485030840
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -32,6 +32,17 @@ TextureImporter:
     21300050: Main_Character_animated_25
     21300052: Main_Character_animated_26
     21300054: Main_Character_animated_27
+    21300056: Main_Character_animated_28
+    21300058: Main_Character_animated_29
+    21300060: Main_Character_animated_30
+    21300062: Main_Character_animated_31
+    21300064: Main_Character_animated_32
+    21300066: Main_Character_animated_33
+    21300068: Main_Character_animated_34
+    21300070: Main_Character_animated_35
+    21300072: Main_Character_animated_36
+    21300074: Main_Character_animated_37
+    21300076: Main_Character_animated_38
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -85,7 +96,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -98,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -111,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -124,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -137,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -150,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -163,7 +174,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 240
+        y: 400
         width: 50
         height: 80
       alignment: 7
@@ -176,7 +187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -189,7 +200,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -202,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -215,7 +226,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -228,7 +239,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -241,7 +252,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -254,7 +265,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 160
+        y: 320
         width: 50
         height: 80
       alignment: 7
@@ -267,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -280,7 +291,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -293,7 +304,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -306,7 +317,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -319,7 +330,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -332,7 +343,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -345,7 +356,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 80
+        y: 240
         width: 50
         height: 80
       alignment: 7
@@ -358,7 +369,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -371,7 +382,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -384,7 +395,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -397,7 +408,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -410,7 +421,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -423,7 +434,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 0
+        y: 160
         width: 50
         height: 80
       alignment: 7
@@ -436,6 +447,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
+        y: 160
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_29
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_30
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_31
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_32
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_33
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_34
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 80
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_36
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Main_Character_animated_38
+      rect:
+        serializedVersion: 2
+        x: 150
         y: 0
         width: 50
         height: 80

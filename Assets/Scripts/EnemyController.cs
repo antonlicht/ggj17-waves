@@ -80,7 +80,7 @@ public class EnemyController : MonoBehaviour {
 		Vector3 selfPos = _body.transform.position;
 
 		if (_captured) {
-			_chaseTarget.SendMessage ("ApplyDamage", damage * Time.deltaTime);
+		//	_chaseTarget.SendMessage ("ApplyDamage", damage * Time.deltaTime);
 		}
 
 		if (_chaseTarget && CanChase(_chaseTarget)) {
