@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
   public PointerListener TouchInput;
+  public Animator Animator;
+
   public float Speed = 70f;
   public float Threshold = 5f;
 
@@ -27,7 +29,13 @@ public class Player : MonoBehaviour
 
   private void Move ()
   {
-    transform.localPosition += (transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime;
+    if (velocity.magnitude > 1)
+    {
+      transform.localPosition += (transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime;
+    }
+
+    Animator.SetFloat("Horizontal", velocity.x);
+    Animator.SetFloat("Vertical", velocity.y);
   }
 
   private void AdjustRotation ()
@@ -55,14 +63,14 @@ public class Player : MonoBehaviour
     }
     else
     {
-      velocity = Vector2.zero;
+      velocity = velocity.normalized;
     }
 
   }
 
   private void HandleEndDrag (PointerEventData eventData)
   {
-    velocity = Vector3.zero;
+    velocity = velocity.normalized;
   }
 
 }
