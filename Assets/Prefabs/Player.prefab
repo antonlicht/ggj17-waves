@@ -52,6 +52,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010297045774}
   - 114: {fileID: 114000014268627690}
+  - 54: {fileID: 54000010882476358}
+  - 136: {fileID: 136000011291034698}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -196,6 +198,21 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!54 &54000010882476358
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012884592538}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 100
+  m_AngularDrag: 100
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!81 &81000011455511992
 AudioListener:
   m_ObjectHideFlags: 1
@@ -265,10 +282,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a85da1d0b33454c9613812835bf058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchInput: {fileID: 0}
+  Rigidbody: {fileID: 54000010882476358}
   Animator: {fileID: 95000011256914484}
   Speed: 70
   Threshold: 5
+--- !u!136 &136000011291034698
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012884592538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 20.4
+  m_Height: 104.52
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212000012559126550
 SpriteRenderer:
   m_ObjectHideFlags: 1
