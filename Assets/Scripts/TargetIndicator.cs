@@ -1,19 +1,24 @@
-﻿using DG.Tweening;
+﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using Shared.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
 {
-  public Player player;
-  public Home home;
+  public Camera camera;
+  public Transform player;
+  public Transform home;
 
-  public Image[] images; // 0 is top, clockwise till  3 left
+  Image[] images; // 0 is top, clockwise till  3 left
 
   private float t;
 
   void Start()
   {
+    images = GetComponentsInChildren<Image>(includeInactive: true);
+    
     foreach (var image in images)
     {
       image.gameObject.SetActive(true);
@@ -24,7 +29,7 @@ public class TargetIndicator : MonoBehaviour
   void Update()
   {
     t += Time.deltaTime;
-    if (t > 4)
+    if (t > 2)
     {
       t = 0;
       FlashIndicator();
@@ -33,19 +38,55 @@ public class TargetIndicator : MonoBehaviour
 
   private void FlashIndicator()
   {
-    Image image;
-    var distance = player.transform.position - home.transform.position;
-    Debug.Log(distance);
-    if (Mathf.Abs(distance.x) > Mathf.Abs(distance.z))
+    var angle = GetAngle();
+    Image image = null;
+    if (angle > -45 && angle < 45)
     {
-      //left/right
-      image = distance.x > 0 ? images[1] : images[3];
+      image = images[0];
     }
-    else
+    if (angle > 45 && angle < 135)
     {
-      //up/down
-      image = distance.y > 0 ? images[2] : images[0];
+      image = images[1];
     }
-    image.DOFade(1, 0.5f).SetLoops(2, LoopType.Yoyo);
+    if ((angle > 135 && angle < 180) || (angle > -180 && angle < -135))
+    {
+      image = images[2];
+    }
+    if (angle > -135 && angle < -45)
+    {
+      image = images[3];
+    }
+    if (image)
+    {
+      image.DOFade(1, 0.5f).SetLoops(2, LoopType.Yoyo);      
+    }
+  }
+  
+  float GetAngle()
+  {
+    float angle;
+    float xDiff = home.position.x - player.position.x;
+    float zDiff = home.position.z - player.position.z;
+   
+    angle = Mathf.Atan(xDiff / zDiff) * 180 / Mathf.PI;
+
+    // tangent only returns an angle from -90 to +90.  we need to check if its behind us and adjust.
+    if (zDiff < 0)
+    {
+      angle += zDiff >= 0 ? 180f : -180f;
+    }
+ 
+    // this is our angle of rotation from 0->360
+    float playerAngle = player.eulerAngles.y;
+    if (playerAngle > 180f) playerAngle = 360f - playerAngle;
+ 
+    
+    angle -= playerAngle;
+ 
+    // Make sure we didn't rotate past 180 in either direction
+    if (angle < -180f) angle += 360;
+    else if (angle > 180f) angle -= 360;
+ 
+    return angle;
   }
 }
