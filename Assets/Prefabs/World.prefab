@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 1000012362421154, guid: 9e437b500950943bb87c6c081339f0da, type: 2}
   - {fileID: 1000012362421154, guid: 19f981d85a84e460a813888f77d5a8fa, type: 2}
   - {fileID: 1000012362421154, guid: 375a9083d35c3420b97da9132406ad0f, type: 2}
-  - {fileID: 1000012362421154, guid: 9e437b500950943bb87c6c081339f0da, type: 2}
+  - {fileID: 141616, guid: ca42f2ea051f4bf469445bce407585ee, type: 2}
   - {fileID: 1000012362421154, guid: f62f6c8bd5295d644ba6834246ce5d95, type: 2}
   TargetObject: {fileID: 0}
   worldToGridScale: 2000
