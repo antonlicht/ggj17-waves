@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Home : MonoBehaviour
 {
+  public UIController uiController;
   public Wandering wandering;
   public Animator animator;
 
   private float pauseTime;
-  
-  private void Start()
+
+  private void Start ()
   {
     var circlePos = Random.insideUnitSphere * 500;
     circlePos.y = 0;
     transform.position = circlePos;
 
-    pauseTime = Random.Range(2, 10);
+    pauseTime = Random.Range (2, 10);
   }
 
-  private void Update()
+  private void Update ()
   {
     pauseTime -= Time.deltaTime;
     if (pauseTime < 0)
@@ -25,25 +25,24 @@ public class Home : MonoBehaviour
       if (wandering.enabled)
       {
         wandering.enabled = false;
-        animator.SetBool("idle", true);        
+        animator.SetBool ("idle", true);
       }
       else if (pauseTime < -1)
       {
         wandering.enabled = true;
-        animator.SetBool("idle", false);
-        pauseTime = Random.Range(2, 10);
+        animator.SetBool ("idle", false);
+        pauseTime = Random.Range (2, 10);
       }
     }
-    
-    
+
+
   }
 
-  private void OnTriggerEnter(Collider other)
-  {    
-    if (other.gameObject.GetComponentInParent<Player>() != null && other.name != "CatSpawnRadius")
+  private void OnTriggerEnter (Collider other)
+  {
+    if (other.gameObject.GetComponentInParent<Player> () != null && other.name != "CatSpawnRadius")
     {
-      Debug.Log("you won!");
-//      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      uiController.ShowWonScreen ();
     }
   }
 }
