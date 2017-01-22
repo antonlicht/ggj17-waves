@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692397, g: 0.49678612, b: 0.57508594, a: 1}
+  m_IndirectSpecularColor: {r: 0.4469236, g: 0.49678588, b: 0.5750852, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -187,6 +187,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 642414347}
+    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
+        type: 2}
+      propertyPath: home
+      value: 
+      objectReference: {fileID: 426235848}
     - target: {fileID: 114000011159522954, guid: b1d19477f1c5979498510d5d821d024e,
         type: 2}
       propertyPath: player
@@ -217,16 +227,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 642414347}
-    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
-        type: 2}
-      propertyPath: home
-      value: 
-      objectReference: {fileID: 1254435793}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
   m_IsPrefabParent: 0
@@ -371,6 +371,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &426235848 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011973090718, guid: 0ca3b4c2127f24afd9bc1a8d59dfb1ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 448311520}
+  m_Script: {fileID: 11500000, guid: 444fc77e2ef0d46b0a3c9762430e41ba, type: 3}
 --- !u!1001 &448311520
 Prefab:
   m_ObjectHideFlags: 0
@@ -539,11 +545,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!4 &1254435793 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000013967431234, guid: 0ca3b4c2127f24afd9bc1a8d59dfb1ea,
-    type: 2}
-  m_PrefabInternal: {fileID: 448311520}
 --- !u!4 &1260377732 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010297045774, guid: b7113e2b12534634aa6dfe38702d5dfc,

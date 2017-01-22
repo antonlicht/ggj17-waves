@@ -139,7 +139,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -253,6 +253,7 @@ MonoBehaviour:
   uiController: {fileID: 0}
   wandering: {fileID: 114000010960430580}
   animator: {fileID: 95000013264547140}
+  audioSource: {fileID: 82000012755079550}
 --- !u!114 &114000013862884160
 MonoBehaviour:
   m_ObjectHideFlags: 1

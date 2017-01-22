@@ -60,13 +60,8 @@ public class Player : MonoBehaviour
     Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
     
     var eulerAngles = transform.rotation.eulerAngles;
-    var inputRotation = input.x * RotationSpeed * Time.deltaTime;
-    if (input.y < 0)
-    {
-      inputRotation *= -1;
-    }
-    //eulerAngles.y = AdjustRotation(inputRotation);
-    eulerAngles.y += inputRotation;
+    eulerAngles.y = AdjustRotation();
+    //eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
     
     if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
     {
@@ -91,7 +86,7 @@ public class Player : MonoBehaviour
   {
     float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
     float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
-    float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.05f;
+    float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.005f;
     return sinRot + cosRot + linRot;
   }
 }
