@@ -102,12 +102,12 @@ GameObject:
   - 114: {fileID: 664218536}
   - 114: {fileID: 664218535}
   m_Layer: 5
-  m_Name: 
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &664218535
 MonoBehaviour:
   m_ObjectHideFlags: 0
