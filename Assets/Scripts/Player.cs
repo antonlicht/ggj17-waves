@@ -4,21 +4,31 @@ public class Player : MonoBehaviour
 {
   public Rigidbody Rigidbody;
   public Animator Animator;
+  public GameObject damageSprite;
 
   public float Speed = 100f;
   public float RotationSpeed = 10f;
+
+  public float health = 100f;
 
   public float boostTimeInSecond;
   
   public float boostMultiplier = 5f;
 
-  private Vector3 rotation;
 
-  void Update ()
+  void FixedUpdate ()
   {
     Move ();
-//    AdjustRotation ();
   }
+
+  void ApplyDamage(float damage) {
+	health -= damage;
+	if (health < 0f) health = 0f;		
+	Animator.SetBool ("Dead", IsDead());
+	damageSprite.SetActive (!IsDead());
+  }
+
+  private bool IsDead() { return health <= 0f; }
   
   private void Move ()
   {
@@ -31,6 +41,8 @@ public class Player : MonoBehaviour
       velocity *= boostMultiplier;
     }
 
+	if (IsDead()) { velocity = velocity * 0f; }
+				
     Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
 
     
@@ -54,11 +66,4 @@ public class Player : MonoBehaviour
     Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
   }
 
-  private void AdjustRotation ()
-  {
-    float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
-    float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
-    float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.05f;
-    rotation = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
-  }
 }
