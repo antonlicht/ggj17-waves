@@ -6,6 +6,9 @@ public class AudioTrigger : MonoBehaviour
   public AudioSource AudioSource;
   public void Trigger()
   {
-    AudioSource.Play();
+    if (AudioSource)
+    {
+      AudioSource.Play();
+    }
   }
 }

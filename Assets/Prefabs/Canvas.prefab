@@ -608,6 +608,7 @@ GameObject:
   - 224: {fileID: 224000014211574188}
   - 222: {fileID: 222000013568083402}
   - 95: {fileID: 95000012990463092}
+  - 114: {fileID: 114000013036383342}
   m_Layer: 5
   m_Name: Signal
   m_TagString: Untagged
@@ -2473,6 +2474,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000013036383342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012770353698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca329add5bdefb4cadeebb9b24dce6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
 --- !u!114 &114000013078829514
 MonoBehaviour:
   m_ObjectHideFlags: 1
