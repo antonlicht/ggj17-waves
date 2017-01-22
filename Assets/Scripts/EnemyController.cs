@@ -81,8 +81,13 @@ public class EnemyController : MonoBehaviour {
 	void FixedUpdate () {
 		Vector3 selfPos = _body.transform.position;
 
-		if (_captured && _chaseTarget) {			
-			_chaseTarget.SendMessage ("ApplyDamage", damage * Time.deltaTime);
+		if (_captured && _chaseTarget)
+		{
+		  Player player = _chaseTarget.gameObject.GetComponentInParent<Player>();
+		  if (player != null)
+		  {
+		    player.ApplyDamage(damage * Time.deltaTime);
+		  }
 		}			
 
 		if (_chaseTarget && CanChase(_chaseTarget)) {

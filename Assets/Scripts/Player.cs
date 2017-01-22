@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     energy = Mathf.Clamp01(energy + Time.deltaTime / 3f);
   }
 
-  void ApplyDamage(float damage) {
+  public void ApplyDamage(float damage) {
 	health -= damage;
 	if (health < 0f) health = 0f;		
 	Animator.SetBool ("Dead", IsDead());
