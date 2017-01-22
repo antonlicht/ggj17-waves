@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
 
   public float energy;
   
-  public float boostMultiplier = 5f;
+  public float boostMultiplier = 4f;
 
   private Vector3 rotation;
+
+  private bool energyRefillNecessary;
 
   void FixedUpdate ()
   {
@@ -40,8 +42,17 @@ public class Player : MonoBehaviour
     
     if (Input.GetKey("space") && energy > 0)
     {
-      velocity *= boostMultiplier;
-      energy -= Time.deltaTime * 2;
+      if (!(energyRefillNecessary && energy < 0.25f))
+      {
+        energyRefillNecessary = false;
+		velocity *= boostMultiplier;
+		energy -= Time.deltaTime * 2;
+        if (energy <= 0)
+        {
+          energy = 0;
+          energyRefillNecessary = true;
+        }
+      }
     }    
 
 	if (IsDead()) { velocity = velocity * 0f; }

@@ -87,6 +87,7 @@ GameObject:
   - 114: {fileID: 114000014268627690}
   - 54: {fileID: 54000010882476358}
   - 136: {fileID: 136000011291034698}
+  - 114: {fileID: 114000013416097978}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -319,6 +320,23 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000013416097978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012884592538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8509664699c9744d8a82cc539cb6a727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnArea: {fileID: 135000013975049226}
+  enemyPrefab: {fileID: 1167426678683504, guid: c0fd435cd74ff45139c47371958a23fe,
+    type: 2}
+  parent: {fileID: 0}
+  spawnPointTag: RespawnPoint
+  maxEnemies: 20
 --- !u!114 &114000014268627690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,7 +351,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 54000010882476358}
   Animator: {fileID: 95000011256914484}
   damageSprite: {fileID: 1000010239325552}
-  Speed: 70
+  Speed: 60
   RotationSpeed: 10
   health: 100
   energy: 1

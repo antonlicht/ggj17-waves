@@ -215,7 +215,7 @@ GameObject:
   - 135: {fileID: 135000011862524226}
   m_Layer: 0
   m_Name: CatSpawner
-  m_TagString: Untagged
+  m_TagString: RespawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - 135: {fileID: 135000013205601320}
   m_Layer: 0
   m_Name: CatSpawner
-  m_TagString: Untagged
+  m_TagString: RespawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ GameObject:
   - 135: {fileID: 135000010679102066}
   m_Layer: 0
   m_Name: CatSpawner
-  m_TagString: Untagged
+  m_TagString: RespawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,7 +524,7 @@ GameObject:
   - 135: {fileID: 135000010096549618}
   m_Layer: 0
   m_Name: CatSpawner
-  m_TagString: Untagged
+  m_TagString: RespawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
