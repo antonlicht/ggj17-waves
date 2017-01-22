@@ -52,7 +52,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TilePrefabs:
+  - {fileID: 1000012362421154, guid: f62f6c8bd5295d644ba6834246ce5d95, type: 2}
   - {fileID: 1000012362421154, guid: 9e437b500950943bb87c6c081339f0da, type: 2}
+  - {fileID: 1000012362421154, guid: 375a9083d35c3420b97da9132406ad0f, type: 2}
+  - {fileID: 1000012362421154, guid: 19f981d85a84e460a813888f77d5a8fa, type: 2}
+  - {fileID: 1000012362421154, guid: 61578065375bb4874a76c8dfc325dbae, type: 2}
+  - {fileID: 1000012362421154, guid: 9e437b500950943bb87c6c081339f0da, type: 2}
+  - {fileID: 1000012362421154, guid: 19f981d85a84e460a813888f77d5a8fa, type: 2}
+  - {fileID: 1000012362421154, guid: 375a9083d35c3420b97da9132406ad0f, type: 2}
+  - {fileID: 1000012362421154, guid: 9e437b500950943bb87c6c081339f0da, type: 2}
+  - {fileID: 1000012362421154, guid: f62f6c8bd5295d644ba6834246ce5d95, type: 2}
   TargetObject: {fileID: 0}
-  worldToGridScale: 2006
+  worldToGridScale: 2000
   GridSize: 3

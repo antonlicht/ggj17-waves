@@ -9,7 +9,7 @@ public class TileManager : MonoBehaviour
   public GameObject[] TilePrefabs;
   public Transform TargetObject;
   public float worldToGridScale = 2006f;
-  public int GridSize = 3;
+  public int GridSize = 5;
 
   private int _seed;
 
@@ -23,7 +23,7 @@ public class TileManager : MonoBehaviour
   {
     _seed = Random.Range(1, int.MaxValue);
     _grid = new Grid<GameObject>(GridSize, GridSize);
-    SetGridPosition(0, 0, true);
+    SetGridPosition(1, 1, true);
   }
 
   void Update()

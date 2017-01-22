@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -7,18 +7,20 @@ public class Player : MonoBehaviour
   public GameObject damageSprite;
 
   public float Speed = 100f;
-  public float RotationSpeed = 10f;
+  public float RotationSpeed = 20f;
 
   public float health = 100f;
 
-  public float boostTimeInSecond;
+  public float energy;
   
   public float boostMultiplier = 5f;
 
+  private Vector3 rotation;
 
   void FixedUpdate ()
   {
     Move ();
+    energy = Mathf.Clamp01(energy + Time.deltaTime / 3f);
   }
 
   void ApplyDamage(float damage) {
@@ -36,10 +38,11 @@ public class Player : MonoBehaviour
     
     Vector2 velocity = input * Speed;
     
-    if (Input.GetKey("space"))
+    if (Input.GetKey("space") && energy > 0)
     {
       velocity *= boostMultiplier;
-    }
+      energy -= Time.deltaTime * 2;
+    }    
 
 	if (IsDead()) { velocity = velocity * 0f; }
 				
@@ -66,4 +69,11 @@ public class Player : MonoBehaviour
     Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
   }
 
+  private void AdjustRotation ()
+  {
+    float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
+    float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
+    float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.05f;
+    rotation = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
+  }
 }

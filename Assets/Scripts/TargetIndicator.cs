@@ -7,28 +7,25 @@ using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
 {
-  public Transform player;
+  public Player player;
   public Transform home;
+  Transform playerTransform;
 
-  public Image[] images; // 0 is top, clockwise till  3 left
-
+  public Image arrow;
+  
   private float t;
 
   void Start()
   {
-    foreach (var image in images)
-    {
-      image.gameObject.SetActive(true);
-      image.SetAlpha(0);
-    }
+    arrow.SetAlpha(0);
+    playerTransform = player.transform;
   }
   
   void Update()
-  {
-    t += Time.deltaTime;
-    if (t > 4  )
+  {    
+    if (Input.GetKey(KeyCode.LeftShift) && player.energy >= 1)
     {
-      t = 0;
+      player.energy -= 1;
       FlashIndicator();
     }
   }
@@ -37,33 +34,16 @@ public class TargetIndicator : MonoBehaviour
   {
     var angle = GetAngle();
     
-    Image image = null;
-    if (angle > -45 && angle < 45)
-    {
-      image = images[0];
-    }
-    if (angle > 45 && angle < 135)
-    {
-      image = images[1];
-    }
-    if ((angle > 135 && angle < 180) || (angle > -180 && angle < -135))
-    {
-      image = images[2];
-    }
-    if (angle > -135 && angle < -45)
-    {
-      image = images[3];
-    }
-    if (image)
-    {
-      image.DOFade(1, 0.5f).SetLoops(2, LoopType.Yoyo);      
-    }
+    var euler = new Vector3(0, 0, -angle);
+    var rotation = Quaternion.Euler(euler);
+    arrow.transform.parent.rotation = rotation;    
+    arrow.DOFade(1, 0.25f).SetLoops(2, LoopType.Yoyo);
   }
   
   float GetAngle()
   {
-    float xDiff = home.position.x - player.position.x;
-    float zDiff = home.position.z - player.position.z;
+    float xDiff = home.position.x - playerTransform.position.x;
+    float zDiff = home.position.z - playerTransform.position.z;
    
     var angle = Mathf.Atan(xDiff / zDiff) * 180 / Mathf.PI;
     
@@ -76,7 +56,7 @@ public class TargetIndicator : MonoBehaviour
         angle -= 180f;
     }
      
-    float playerAngle = player.eulerAngles.y;
+    float playerAngle = playerTransform.eulerAngles.y;
     angle -= playerAngle;
     
     while (angle > 180f)
