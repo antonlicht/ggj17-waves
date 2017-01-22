@@ -10,7 +10,7 @@ public class CatSpawner : MonoBehaviour {
 	public string spawnPointTag;
 	public int maxEnemies = 20;
 
-	public int _enemiesCount = 0;
+	private int _enemiesCount = 0;
 	private float _enemyHeight = 0.0f;
 	private List<GameObject> _inactive;
 
