@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {fileID: 136000013784250614}
-  wanderSpeed: 40
+  wanderSpeed: 45
   maxWanderDist: 250
 --- !u!114 &114000011973090718
 MonoBehaviour:

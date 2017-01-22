@@ -69,7 +69,6 @@ GameObject:
   - 4: {fileID: 4000011121644572}
   - 212: {fileID: 212000012862731084}
   - 95: {fileID: 95000011256914484}
-  - 136: {fileID: 136000013621504178}
   m_Layer: 0
   m_Name: View
   m_TagString: player
@@ -88,9 +87,10 @@ GameObject:
   - 114: {fileID: 114000014268627690}
   - 54: {fileID: 54000010882476358}
   - 114: {fileID: 114000013416097978}
+  - 136: {fileID: 136000014126369450}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012884592538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -412,8 +412,8 @@ MonoBehaviour:
   Animator: {fileID: 95000011256914484}
   CameraAnimator: {fileID: 95000011324110988}
   damageSprite: {fileID: 1000010239325552}
-  Speed: 60
-  RotationSpeed: 10
+  Speed: 55
+  RotationSpeed: 20
   health: 100
   energy: 1
   boostMultiplier: 5
@@ -429,17 +429,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2000
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136000013621504178
+--- !u!136 &136000014126369450
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012808003554}
+  m_GameObject: {fileID: 1000012884592538}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 19.1
-  m_Height: 70.7
+  m_Radius: 25.32
+  m_Height: 108.1
   m_Direction: 1
   m_Center: {x: 0, y: 33.7, z: -0.2}
 --- !u!212 &212000012862731084

@@ -21,7 +21,7 @@ public class TargetIndicator : MonoBehaviour
   
   private float t;
 
-  private Camera camera;
+  private Camera cam;
 
   private Vector2 playerOnScreen;
 
@@ -33,9 +33,9 @@ public class TargetIndicator : MonoBehaviour
     incomingSignal.gameObject.SetActive(false);
     outgoingSignal.gameObject.SetActive(false);
     
-    camera = Camera.main;
+    cam = Camera.main;
     
-    playerOnScreen = RectTransformUtility.WorldToScreenPoint(camera, player.transform.position);
+    playerOnScreen = RectTransformUtility.WorldToScreenPoint(cam, player.transform.position);
     playerOnScreen.y -= offset;
 
     outgoingSignal.anchoredPosition = playerOnScreen;
@@ -74,7 +74,7 @@ public class TargetIndicator : MonoBehaviour
 
   private void AdjustCatSignalPosition()
   {
-    var homeOnScreen = RectTransformUtility.WorldToScreenPoint(camera, home.transform.position);        
+    var homeOnScreen = RectTransformUtility.WorldToScreenPoint(cam, home.transform.position);        
     
     homeOnScreen.y -= offset;
     
