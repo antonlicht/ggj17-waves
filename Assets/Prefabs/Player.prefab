@@ -69,6 +69,7 @@ GameObject:
   - 4: {fileID: 4000011121644572}
   - 212: {fileID: 212000012862731084}
   - 95: {fileID: 95000011256914484}
+  - 81: {fileID: 81000013438147590}
   m_Layer: 0
   m_Name: View
   m_TagString: player
@@ -105,7 +106,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010801146802}
   - 20: {fileID: 20000014247147406}
-  - 81: {fileID: 81000011455511992}
   - 108: {fileID: 108000012946078680}
   - 114: {fileID: 114000010431429074}
   - 95: {fileID: 95000011324110988}
@@ -248,12 +248,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!81 &81000011455511992
+--- !u!81 &81000013438147590
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013623992934}
+  m_GameObject: {fileID: 1000012808003554}
   m_Enabled: 1
 --- !u!82 &82000010662636786
 AudioSource:
