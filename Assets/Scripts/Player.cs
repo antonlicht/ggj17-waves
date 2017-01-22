@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
   public Rigidbody Rigidbody;
   public Animator Animator;
+  public Animator CameraAnimator;
   public GameObject damageSprite;
 
   public float Speed = 100f;
@@ -39,19 +40,20 @@ public class Player : MonoBehaviour
     var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     
     Vector2 velocity = input * Speed;
-    
-    if (Input.GetKey("space") && energy > 0)
+
+    bool canBoost = energy > 0 && !(energyRefillNecessary && energy < 0.25f);
+    bool doBoost = Input.GetKey("space") && canBoost;
+
+    if (doBoost)
     {
-      if (!(energyRefillNecessary && energy < 0.25f))
+      energyRefillNecessary = false;
+		  velocity *= boostMultiplier;
+		  energy -= Time.deltaTime * 2;
+
+      if (energy <= 0)
       {
-        energyRefillNecessary = false;
-		velocity *= boostMultiplier;
-		energy -= Time.deltaTime * 2;
-        if (energy <= 0)
-        {
-          energy = 0;
-          energyRefillNecessary = true;
-        }
+        energy = 0;
+        energyRefillNecessary = true;
       }
     }    
 
@@ -76,7 +78,9 @@ public class Player : MonoBehaviour
       Animator.SetFloat ("Vertical", velocity.y);
       Animator.SetFloat("Horizontal", 0);
     }
-    
+
+    CameraAnimator.SetBool ("Bloom", doBoost);
+
     Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
   }
 
