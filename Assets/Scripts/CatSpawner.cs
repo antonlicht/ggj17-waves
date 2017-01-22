@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Shared.Extensions;
 using UnityEngine;
 
 public class CatSpawner : MonoBehaviour {
@@ -31,15 +30,8 @@ public class CatSpawner : MonoBehaviour {
 		} else {
 			newEnemy = Instantiate(enemyPrefab);
 
-			if (_enemyHeight < 1.0f) {
-				Collider col = newEnemy.GetComponent<Collider> ();
-				if (col) {
-					_enemyHeight = col.bounds.extents.magnitude;
-				}
-			}
-
-			newEnemy.transform.SetParent (parent.transform);
-
+	    newEnemy.transform.SetParent (parent.transform);
+		  
 		  var localPos = newEnemy.transform.localPosition;
 		  localPos.x = Random.Range(-100, 100);
 		  localPos.y = Random.Range(-100, 100);

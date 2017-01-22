@@ -17,14 +17,23 @@ public class Billboard : MonoBehaviour {
 			camera.transform.rotation * Vector3.up);
 	}
 
+  private float count;
+
 	void FixedUpdate() {
 		Vector3 curPos = this.transform.position;
 		Vector3 dir = (curPos - _oldPos);
 
-		dir = this.transform.InverseTransformDirection (dir);
 
-		if (flipSprite) {
-			flipSprite.flipX = dir.x > 0;
+    if (flipSprite)
+    {
+      dir = this.transform.InverseTransformDirection (dir);
+      count += Mathf.Sign (dir.x);
+
+      if (Mathf.Abs(count) > 5)
+      {
+        count = 0;
+        flipSprite.flipX = dir.x > 0;
+      }
 		}
 
 		_oldPos = curPos;

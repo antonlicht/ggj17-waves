@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour
+{
 
+  public LayerMask layerMask;
 	public Collider areaOfEffect;
 	public Collider areaOfDamage;
 
@@ -16,27 +18,29 @@ public class EnemyController : MonoBehaviour {
 	public float chaseSpeed;
 	public float damage;
 
-	private GameObject _chaseTarget = null;
+  public float damageRange = 10;
+
+	public GameObject chaseTarget = null;
 	private Rigidbody _body = null;
 	private bool _captured = false;
 
 	void Start () {
 		_captured = false;
-		_chaseTarget = null;
+		chaseTarget = null;
 		_body = GetComponent<Rigidbody>();
 		areaOfEffect.isTrigger = true;
 		areaOfDamage.isTrigger = false;
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (_chaseTarget)
+		if (chaseTarget)
 			return;
 		if (!other.CompareTag(targetTag))
 			return;
 		if (!CanChase(other.gameObject) )
 			return;
 
-		_chaseTarget = other.gameObject;
+		chaseTarget = other.gameObject;
 		wandering.enabled = false;
 	}
 
@@ -45,25 +49,11 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (_chaseTarget == other.gameObject)
-			_chaseTarget = null;
+		if (chaseTarget == other.gameObject)
+			chaseTarget = null;
 
 		if (headAnimator) 
 			headAnimator.Play ("EnemyHead_scan");
-	}
-
-	void OnCollisionEnter(Collision collision) {
-		if (collision.collider.gameObject == _chaseTarget)
-			_captured = true;
-	}
-
-	void OnCollisionStay(Collision collision) {
-		OnCollisionEnter (collision);
-	}
-
-	void OnCollisionExit(Collision collision) {
-		if (collision.collider.gameObject == _chaseTarget)
-			_captured = false;
 	}
 
 	bool CanChase(GameObject target) {
@@ -71,33 +61,36 @@ public class EnemyController : MonoBehaviour {
 		Vector3 dir = target.transform.position - selfPos;
 		RaycastHit hit;
 
-		bool wasHit = Physics.Raycast (selfPos, dir, out hit);
-		if (wasHit && hit.collider.gameObject == target)
-			return true;
-
+		bool wasHit = Physics.Raycast (selfPos, dir, out hit, 10000, layerMask);
+	  if (wasHit)
+	  {
+	    return hit.collider.gameObject == target;
+	  }
+    
 		return false;
 	}
 
 	void FixedUpdate () {
 		Vector3 selfPos = _body.transform.position;
 
-		if (_captured && _chaseTarget)
+		if (chaseTarget)
 		{
-		  Player player = _chaseTarget.gameObject.GetComponentInParent<Player>();
-		  if (player != null)
+		  Player player = chaseTarget.gameObject.GetComponentInParent<Player>();
+		  if (player != null && (player.transform.position-transform.position).magnitude < damageRange)
 		  {
 		    player.ApplyDamage(damage * Time.deltaTime);
+		    _captured = true;
 		  }
 		}			
 
-		if (_chaseTarget && CanChase(_chaseTarget)) {
+		if (chaseTarget && CanChase(chaseTarget)) {
 			wandering.enabled = false;
 
-			Vector3 targetPos = _chaseTarget.transform.position;
+			Vector3 targetPos = chaseTarget.transform.position;
 			_body.MovePosition (Vector3.MoveTowards (selfPos, targetPos, chaseSpeed * Time.deltaTime));
 		} 
 		else {
-			_chaseTarget = null;
+			chaseTarget = null;
 			wandering.enabled = true;
 		}
 			
@@ -112,6 +105,7 @@ public class EnemyController : MonoBehaviour {
 			headAnimator.SetBool ("drool", !(wandering.enabled || _captured));
 			headAnimator.SetBool ("attack", _captured);
 		}
-			
+
+	  _captured = false;
 	}
 }
