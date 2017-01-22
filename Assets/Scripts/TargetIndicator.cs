@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
-using Shared.Extensions;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
 {
   public Player player;
-  public Transform home;
+  public Home home;
 
   public RectTransform incomingSignal;
   
@@ -17,7 +12,7 @@ public class TargetIndicator : MonoBehaviour
   
   private float offset;
 
-  public float showSignalDuration = 0.5f;
+  public float showSignalDuration = 1f;
   
   private float t;
 
@@ -61,12 +56,17 @@ public class TargetIndicator : MonoBehaviour
     incomingSignal.gameObject.SetActive(true);
     
     var t = Time.time + showSignalDuration;
+
+    home.TuneUpDaRadiooo(true);
+    home.TriggerCat();
+
     while (t > Time.time)
     {
       AdjustCatSignalPosition();
       yield return null;
     }
-    
+    home.TuneUpDaRadiooo (false);
+
     incomingSignal.gameObject.SetActive(false);
 
     signalling = null;

@@ -1505,7 +1505,7 @@ MonoBehaviour:
   home: {fileID: 0}
   incomingSignal: {fileID: 224000010760485612}
   outgoingSignal: {fileID: 224000013877533996}
-  showSignalDuration: 0.5
+  showSignalDuration: 1
 --- !u!114 &114000011159522954
 MonoBehaviour:
   m_ObjectHideFlags: 1
