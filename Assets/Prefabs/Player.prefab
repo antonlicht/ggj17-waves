@@ -487,7 +487,7 @@ MonoBehaviour:
   Animator: {fileID: 95000011256914484}
   CameraAnimator: {fileID: 95000011324110988}
   damageSprite: {fileID: 1000010239325552}
-  Speed: 55
+  Speed: 50
   RotationSpeed: 20
   health: 100
   energy: 1
