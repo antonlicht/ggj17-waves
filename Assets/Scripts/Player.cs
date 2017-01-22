@@ -60,8 +60,13 @@ public class Player : MonoBehaviour
     Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
     
     var eulerAngles = transform.rotation.eulerAngles;
-    eulerAngles.y = AdjustRotation();
-    eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
+    var inputRotation = input.x * RotationSpeed * Time.deltaTime;
+    if (input.y < 0)
+    {
+      inputRotation *= -1;
+    }
+    //eulerAngles.y = AdjustRotation(inputRotation);
+    eulerAngles.y += inputRotation;
     
     if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
     {
