@@ -90,7 +90,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &16802882
+--- !u!1001 &48147009
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -197,7 +197,7 @@ Prefab:
       propertyPath: home
       value: 
       objectReference: {fileID: 1254435793}
-    - target: {fileID: 114000010163131274, guid: b1d19477f1c5979498510d5d821d024e,
+    - target: {fileID: 114000011159522954, guid: b1d19477f1c5979498510d5d821d024e,
         type: 2}
       propertyPath: player
       value: 
@@ -563,5 +563,5 @@ Prefab:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011699040898, guid: b1d19477f1c5979498510d5d821d024e,
     type: 2}
-  m_PrefabInternal: {fileID: 16802882}
+  m_PrefabInternal: {fileID: 48147009}
   m_Script: {fileID: 11500000, guid: d48a8114eb06b4483a6dee99e6f9a0c6, type: 3}
