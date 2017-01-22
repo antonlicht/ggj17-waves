@@ -30,14 +30,7 @@ public class CatSpawner : MonoBehaviour {
 		} else {
 			newEnemy = Instantiate(enemyPrefab);
 
-			if (_enemyHeight < 1.0f) {
-				Collider col = newEnemy.GetComponent<Collider> ();
-				if (col) {
-					_enemyHeight = col.bounds.extents.magnitude;
-				}
-			}
-
-			newEnemy.transform.SetParent (parent.transform);
+	    newEnemy.transform.SetParent (parent.transform);
 		}
 			
 		Vector3 respawnPos = other.gameObject.transform.position;

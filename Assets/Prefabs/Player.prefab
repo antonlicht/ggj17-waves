@@ -71,6 +71,7 @@ GameObject:
   - 212: {fileID: 212000012862731084}
   - 95: {fileID: 95000011256914484}
   - 81: {fileID: 81000013438147590}
+  - 136: {fileID: 136000013870828060}
   m_Layer: 0
   m_Name: View
   m_TagString: player
@@ -89,12 +90,11 @@ GameObject:
   - 114: {fileID: 114000014268627690}
   - 54: {fileID: 54000010882476358}
   - 114: {fileID: 114000013416097978}
-  - 136: {fileID: 136000014126369450}
   - 82: {fileID: 82000010662636786}
   - 82: {fileID: 82000010669724924}
   m_Layer: 0
   m_Name: Player
-  m_TagString: player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnArea: {fileID: 135000013975049226}
-  enemyPrefab: {fileID: 1167426678683504, guid: c0fd435cd74ff45139c47371958a23fe,
+  enemyPrefab: {fileID: 1000010200482044, guid: c0fd435cd74ff45139c47371958a23fe,
     type: 2}
   parent: {fileID: 0}
   spawnPointTag: RespawnPoint
@@ -654,19 +654,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2000
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136000014126369450
+--- !u!136 &136000013870828060
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012884592538}
+  m_GameObject: {fileID: 1000012808003554}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 25.32
-  m_Height: 108.1
+  m_Radius: 20.4
+  m_Height: 73.98
   m_Direction: 1
-  m_Center: {x: 0, y: 33.7, z: -0.2}
+  m_Center: {x: 0, y: 34.3, z: 0.0000011920929}
 --- !u!212 &212000012862731084
 SpriteRenderer:
   m_ObjectHideFlags: 1
