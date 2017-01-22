@@ -16,8 +16,6 @@ public class Player : MonoBehaviour
   
   public float boostMultiplier = 4f;
 
-  private Vector3 rotation;
-
   private bool energyRefillNecessary;
 
   void FixedUpdate ()
@@ -60,9 +58,9 @@ public class Player : MonoBehaviour
 	if (IsDead()) { velocity = velocity * 0f; }
 				
     Rigidbody.MovePosition(transform.position + ((transform.forward * velocity.y + transform.right * velocity.x) * Time.deltaTime));
-
     
     var eulerAngles = transform.rotation.eulerAngles;
+    eulerAngles.y = AdjustRotation();
     eulerAngles.y += Input.GetAxis("Horizontal") * RotationSpeed * Time.deltaTime;
     
     if (Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y))
@@ -84,11 +82,11 @@ public class Player : MonoBehaviour
     Rigidbody.MoveRotation(Quaternion.Euler(eulerAngles));
   }
 
-  private void AdjustRotation ()
+  private float AdjustRotation ()
   {
     float sinRot = Mathf.Sin (transform.position.z * 0.005f) * Mathf.Rad2Deg;
     float cosRot = Mathf.Cos (-transform.position.x * 0.005f) * Mathf.Rad2Deg;
     float linRot = (transform.position.x + transform.position.z + Mathf.Sin (Time.time) * 50) * 0.05f;
-    rotation = new Vector3 (0f, sinRot + cosRot + linRot, 0f);
+    return sinRot + cosRot + linRot;
   }
 }

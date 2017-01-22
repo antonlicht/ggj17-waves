@@ -1566,8 +1566,8 @@ MonoBehaviour:
   WonScreen: {fileID: 1000010170769422}
   LostScreen: {fileID: 1000013028414572}
   ReloadButtons:
-  - {fileID: 114000012904162946}
-  - {fileID: 114000012859993996}
+  - {fileID: 114000011252525266}
+  - {fileID: 114000013927988754}
 --- !u!114 &114000011787376408
 MonoBehaviour:
   m_ObjectHideFlags: 1

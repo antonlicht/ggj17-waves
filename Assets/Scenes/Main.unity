@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469236, g: 0.49678588, b: 0.5750852, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692397, g: 0.49678612, b: 0.57508594, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -187,16 +187,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011427281276, guid: b1d19477f1c5979498510d5d821d024e,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 642414347}
-    - target: {fileID: 114000011427281276, guid: b1d19477f1c5979498510d5d821d024e,
-        type: 2}
-      propertyPath: home
-      value: 
-      objectReference: {fileID: 1254435793}
     - target: {fileID: 114000011159522954, guid: b1d19477f1c5979498510d5d821d024e,
         type: 2}
       propertyPath: player
@@ -227,10 +217,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1000010534060016, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 642414347}
+    - target: {fileID: 114000011106724938, guid: b1d19477f1c5979498510d5d821d024e,
+        type: 2}
+      propertyPath: home
+      value: 
+      objectReference: {fileID: 1254435793}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
   m_IsPrefabParent: 0
