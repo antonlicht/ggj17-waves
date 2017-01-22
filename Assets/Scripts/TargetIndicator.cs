@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Shared.Extensions;
@@ -9,66 +10,83 @@ public class TargetIndicator : MonoBehaviour
 {
   public Player player;
   public Transform home;
-  Transform playerTransform;
 
-  public Image arrow;
+  public RectTransform incomingSignal;
+  
+  public RectTransform outgoingSignal;
+  
+  private float offset;
+
+  public float showSignalDuration = 0.5f;
   
   private float t;
 
+  private Camera camera;
+
+  private Vector2 playerOnScreen;
+
+  private Coroutine signalling;
+  
   void Start()
   {
-    arrow.SetAlpha(0);
-    playerTransform = player.transform;
+    offset = 128 - (128 / (Screen.width / (float) Screen.height));
+    incomingSignal.gameObject.SetActive(false);
+    outgoingSignal.gameObject.SetActive(false);
+    
+    camera = Camera.main;
+    
+    playerOnScreen = RectTransformUtility.WorldToScreenPoint(camera, player.transform.position);
+    playerOnScreen.y -= offset;
+
+    outgoingSignal.anchoredPosition = playerOnScreen;
   }
   
   void Update()
   {    
-    if (Input.GetKey(KeyCode.LeftShift) && player.energy >= 1)
+    if (Input.GetKey(KeyCode.LeftShift) && player.energy >= 1 && signalling == null)
     {
       player.energy -= 1;
-      FlashIndicator();
+      signalling = StartCoroutine(SignalRoutine());
     }
   }
 
-  private void FlashIndicator()
+  private IEnumerator SignalRoutine()
   {
-    var angle = GetAngle();
+    outgoingSignal.gameObject.SetActive(true);
     
-    var euler = new Vector3(0, 0, -angle);
-    var rotation = Quaternion.Euler(euler);
-    arrow.transform.parent.rotation = rotation;    
-    arrow.DOFade(1, 0.25f).SetLoops(2, LoopType.Yoyo);
-  }
-  
-  float GetAngle()
-  {
-    float xDiff = home.position.x - playerTransform.position.x;
-    float zDiff = home.position.z - playerTransform.position.z;
-   
-    var angle = Mathf.Atan(xDiff / zDiff) * 180 / Mathf.PI;
+    yield return new WaitForSeconds(1);
     
-    // tangent only returns an angle from -90 to +90.  we need to check if its behind us and adjust.
-    if (zDiff < 0)
+    outgoingSignal.gameObject.SetActive(false);
+    
+    incomingSignal.gameObject.SetActive(true);
+    
+    var t = Time.time + showSignalDuration;
+    while (t > Time.time)
     {
-      if (xDiff >= 0)
-        angle += 180f;
-      else
-        angle -= 180f;
+      AdjustCatSignalPosition();
+      yield return null;
     }
-     
-    float playerAngle = playerTransform.eulerAngles.y;
-    angle -= playerAngle;
     
-    while (angle > 180f)
+    incomingSignal.gameObject.SetActive(false);
+
+    signalling = null;
+  }
+
+  private void AdjustCatSignalPosition()
+  {
+    var homeOnScreen = RectTransformUtility.WorldToScreenPoint(camera, home.transform.position);        
+    
+    homeOnScreen.y -= offset;
+    
+    var distance = homeOnScreen - playerOnScreen;
+
+    if (distance.magnitude > 160)
     {
-      angle = 360f - angle;
+      distance = distance.normalized * 160;
     }
 
-    while (angle < -180f)
-    {
-      angle = angle + 360f;
-    }
+    var arrowPosition = playerOnScreen + distance;
     
-    return angle;
+    incomingSignal.anchoredPosition = arrowPosition;
   }
 }

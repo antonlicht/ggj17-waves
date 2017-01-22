@@ -10,7 +10,7 @@ public class Home : MonoBehaviour
   
   private void Start()
   {
-    var circlePos = Random.insideUnitSphere * 10000;
+    var circlePos = Random.insideUnitSphere * 500;
     circlePos.y = 0;
     transform.position = circlePos;
 
