@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Shared.Extensions;
 using UnityEngine;
 
 public class CatSpawner : MonoBehaviour {
@@ -38,6 +39,11 @@ public class CatSpawner : MonoBehaviour {
 			}
 
 			newEnemy.transform.SetParent (parent.transform);
+
+		  var localPos = newEnemy.transform.localPosition;
+		  localPos.x = Random.Range(-100, 100);
+		  localPos.y = Random.Range(-100, 100);
+		  newEnemy.transform.localPosition = localPos;
 		}
 			
 		Vector3 respawnPos = other.gameObject.transform.position;
