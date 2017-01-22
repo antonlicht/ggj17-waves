@@ -193,11 +193,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000011973090718, guid: 0ca3b4c2127f24afd9bc1a8d59dfb1ea,
         type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 642414347}
-    - target: {fileID: 114000011973090718, guid: 0ca3b4c2127f24afd9bc1a8d59dfb1ea,
-        type: 2}
       propertyPath: uiController
       value: 
       objectReference: {fileID: 1979060051}
@@ -248,18 +243,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012451375798, guid: b7113e2b12534634aa6dfe38702d5dfc,
-        type: 2}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 1979060050}
     - target: {fileID: 114000013416097978, guid: b7113e2b12534634aa6dfe38702d5dfc,
         type: 2}
       propertyPath: parent
       value: 
       objectReference: {fileID: 468235770}
-    m_RemovedComponents:
-    - {fileID: 114000012451375798, guid: b7113e2b12534634aa6dfe38702d5dfc, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7113e2b12534634aa6dfe38702d5dfc, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &642414347 stripped
@@ -570,12 +559,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1d19477f1c5979498510d5d821d024e, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1979060050 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000010637869416, guid: b1d19477f1c5979498510d5d821d024e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1979060049}
-  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1979060051 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011699040898, guid: b1d19477f1c5979498510d5d821d024e,

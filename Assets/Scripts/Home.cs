@@ -2,7 +2,6 @@
 
 public class Home : MonoBehaviour
 {
-  public Player player;
   public UIController uiController;
   public Wandering wandering;
   public Animator animator;
@@ -43,19 +42,7 @@ public class Home : MonoBehaviour
   {
     if (other.gameObject.GetComponentInParent<Player> () != null && other.name != "CatSpawnRadius")
     {
-      RescuePlayer ();
       uiController.ShowWonScreen ();
-    }
-  }
-
-  private void RescuePlayer ()
-  {
-    foreach (Collider collider in player.GetComponentsInChildren<Collider> ())
-    {
-      if (collider.tag == "player")
-      {
-        collider.tag = "Untagged";
-      }
     }
   }
 }

@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444fc77e2ef0d46b0a3c9762430e41ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   uiController: {fileID: 0}
   wandering: {fileID: 114000010960430580}
   animator: {fileID: 95000013264547140}

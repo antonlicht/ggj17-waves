@@ -88,7 +88,6 @@ GameObject:
   - 114: {fileID: 114000014268627690}
   - 54: {fileID: 54000010882476358}
   - 114: {fileID: 114000013416097978}
-  - 114: {fileID: 114000012451375798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -241,7 +240,7 @@ Rigidbody:
   m_Mass: 200
   m_Drag: 100
   m_AngularDrag: 100
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -321,19 +320,6 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114000012451375798
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012884592538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48a8114eb06b4483a6dee99e6f9a0c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  player: {fileID: 114000014268627690}
 --- !u!114 &114000013416097978
 MonoBehaviour:
   m_ObjectHideFlags: 1

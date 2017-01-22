@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -9,13 +9,47 @@ public class UIController : MonoBehaviour
   public GameObject WonScreen;
   public GameObject LostScreen;
 
-	void Update ()
-  {
-		Slider.value = Player.health;
-	}
+  public Button[] ReloadButtons;
 
-  public void ShowWonScreen()
+  void Awake ()
   {
-    WonScreen.SetActive(true);
+    foreach (Button button in ReloadButtons)
+    {
+      button.onClick.AddListener (() => SceneManager.LoadScene (0));
+    }
+  }
+
+  void Update ()
+  {
+    Slider.value = Player.health;
+    if (Player.health <= 0)
+    {
+      ShowLostScreen ();
+    }
+  }
+
+  private void UntagPlayer ()
+  {
+    foreach (Collider collider in Player.GetComponentsInChildren<Collider> ())
+    {
+      if (collider.tag == "player")
+      {
+        collider.tag = "Untagged";
+        collider.enabled = false;
+        collider.enabled = true;
+      }
+    }
+  }
+
+  public void ShowLostScreen ()
+  {
+    UntagPlayer ();
+    LostScreen.SetActive (true);
+  }
+
+  public void ShowWonScreen ()
+  {
+    UntagPlayer ();
+    WonScreen.SetActive (true);
   }
 }
