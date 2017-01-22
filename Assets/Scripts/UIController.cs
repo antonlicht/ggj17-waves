@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
   {
     foreach (Button button in ReloadButtons)
     {
-      button.onClick.AddListener (() => SceneManager.LoadScene (0));
+      button.onClick.AddListener (() => SceneManager.LoadScene (1));
     }
   }
 
